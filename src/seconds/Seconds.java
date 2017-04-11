@@ -11,8 +11,9 @@ public class Seconds {
     // example: [1, 2, 3, 4, 5] should produce [2, 4] - print this result
 
     ArrayList<Integer> testList = new ArrayList<>();
-    testList = makeList(5);
+    testList = makeList(10);
     System.out.println(testList);
+
     testList = listSecondElts(testList);
     System.out.println(testList);
 

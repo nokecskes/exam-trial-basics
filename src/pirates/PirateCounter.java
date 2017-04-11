@@ -2,9 +2,10 @@ package pirates;
 
 import java.util.*;
 
-public class PirateCounter{
+public class PirateCounter {
 
   static class Pirate {
+
     String name;
     boolean hasWoodenLeg;
     int gold;
@@ -16,7 +17,7 @@ public class PirateCounter{
     }
   }
 
-  public static void main(String... args){
+  public static void main(String... args) {
     ArrayList<Pirate> pirates = new ArrayList<>();
 
     // Given this list...
@@ -40,7 +41,7 @@ public class PirateCounter{
   public static ArrayList<String> sortPirates(ArrayList<Pirate> pirates) {
     ArrayList<String> sortedPirates = new ArrayList<>();
     for (Pirate pirate : pirates) {
-      if(pirate.hasWoodenLeg == true && pirate.gold > 15) {
+      if (pirate.hasWoodenLeg == true && pirate.gold > 15) {
         sortedPirates.add(pirate.name);
       }
     }
