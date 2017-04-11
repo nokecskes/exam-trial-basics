@@ -6,7 +6,6 @@ public class Cuboid {
   // It should have a method called `getSurface` that returns the cuboid's surface
   // It should have a method called `getVolume` that returns the cuboid's volume
 
-
   int a, b, c;
 
   public Cuboid(int a, int b, int c) {
@@ -31,6 +30,4 @@ public class Cuboid {
     int testVolume = testCuboid.getVolume();
     System.out.println("Surface is: " + testSurface + ", volume is: " + testVolume);
   }
-
-
 }
