@@ -19,19 +19,8 @@ public class CountAs {
     // example: on the input "not-a-file" the function should return 0 - print this result
 
     String filename = askUserInput();
-    int aCounter = 0;
-
-    try {
-      Path filePath = Paths.get(filename);
-      List<String> lines = Files.readAllLines(filePath);
-      aCounter = countAs(lines);
-    } catch (Exception e) {
-      System.out.println("0");
-    }
-
+    int aCounter = counter(filename);
     System.out.println(aCounter);
-
-
   }
 
   public static String askUserInput() {
@@ -41,13 +30,26 @@ public class CountAs {
     return filename;
   }
 
+  public static int counter(String filename) {
+    int counter = 0;
+    try {
+      Path filePath = Paths.get(filename);
+      List<String> lines = Files.readAllLines(filePath);
+      counter = countAs(lines);
+    } catch (Exception e) {
+      System.out.println("No file found.");
+      return 0;
+    }
+    return counter;
+  }
+
   public static int countAs(List<String> text) {
     HashMap<String, Integer> aCounter = new HashMap<>();
     aCounter.put("a", 0);
 
     for (String line : text) {
       for (int i = 0; i < line.length(); i++) {
-        if (line.charAt(i) == 'a') {
+        if (line.charAt(i) == 'a' || line.charAt(i) == 'A') {
           aCounter.put("a", aCounter.get("a") + 1);
         }
       }
@@ -55,6 +57,4 @@ public class CountAs {
 
     return aCounter.get("a");
   }
-
-
 }
